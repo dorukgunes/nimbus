@@ -14,7 +14,25 @@ const config: ForgeConfig = {
     name: pkg.productName, 
     asar: true,
     icon: "./images/logo.icns", // Use relative path
+    osxSign: {},
+    osxNotarize: {
+      appleId: process.env.APPLE_ID!,
+      appleIdPassword: process.env.APPLE_PASSWORD!,
+      teamId: process.env.APPLE_TEAM_ID!
+    }
   },
+  publishers: [
+    {
+      name: "@electron-forge/publisher-github",
+      config: {
+        repository: {
+          owner: "dorukgunes",
+          name: "nimbus",
+        },
+        prerelease: true,
+      },
+    },
+  ],
   rebuildConfig: {},
   makers: [
     new MakerSquirrel({}),

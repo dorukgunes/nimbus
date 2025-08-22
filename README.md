@@ -27,7 +27,7 @@ CloudWatch Log Viewer is available for Mac, Windows, and Linux and can be downlo
 
 ```bash
 # Install dependencies
-pnpm install
+npm install
 
 # Start development server with live reload
 npm run start
